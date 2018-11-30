@@ -14,9 +14,11 @@ storageItem.then((res) => {
 
 function toggleEzproxy(s){
     const u=new URL(s);
-    const i=u.host.lastIndexOf(ezproxy);
-    if(i>=0){
-        return `${u.protocol}//${u.host.substring(0,i-1).replace(/-/g,'.')}${u.pathname}${u.search}`;
+    if (!ezproxy){
+        return s;
+    }
+    if (u.host.endsWith(`.${ezproxy}`)){
+        return `${u.protocol}//${u.host.slice(0,-(ezproxy.length+1)).replace(/-/g,'.')}${u.pathname}${u.search}`;
     }else{
         return `${u.protocol}//${u.host.replace(/\./g,'-')}.${ezproxy}${u.pathname}${u.search}`;
     }

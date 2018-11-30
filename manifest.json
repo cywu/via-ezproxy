@@ -1,7 +1,7 @@
 {
     "manifest_version":2,
     "name":"Ezproxy Switcher",
-    "version":"1.0",
+    "version":"1.0.1",
 
     "description":"To access academic papers on some sites, one is required going through his/her institute's ezproxy. First fill in the ezproxy address in Options. Then click the icon in the address bar to quickly switch between ezproxied URL and non-ezproxied URL.",
 
