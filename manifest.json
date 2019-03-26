@@ -23,7 +23,7 @@
     },
     
 
-    "permissions":["<all_urls>","tabs","storage"],
+    "permissions":["activeTab","storage"],
 
     "background": {
         "scripts": ["background.js"] 
