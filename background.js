@@ -5,12 +5,21 @@ storageItem.then((res) => {
     if(res.ezproxy){
         ezproxy=res.ezproxy;
     }
+
+        
     browser.pageAction.onClicked.addListener(
         (tab)=>{
             browser.tabs.update({url:toggleEzproxy(tab.url)});
         }
     );
+
+    browser.browserAction.onClicked.addListener(
+        (tab)=>{
+            browser.tabs.update({url:toggleEzproxy(tab.url)});
+        }
+    );
 });
+
 
 function toggleEzproxy(s){
     const u=new URL(s);
